@@ -11,6 +11,19 @@ arrowMirrorArray(['a', 'b', 'c', 'd']); // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b
 ***********************************************************************/
 
 // your code here
+let arrowMirrorArray = arr => {
+  let front = []
+  let back = [];
+  for (i in arr) {
+    front.push(arr[i])
+    back.unshift(arr[i])
+  }
+  return front.concat(back);
+}
+
+
+console.log(arrowMirrorArray([1, 2, 3])); // => [ 1, 2, 3, 3, 2, 1 ]
+console.log(arrowMirrorArray(['a', 'b', 'c', 'd'])); // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
