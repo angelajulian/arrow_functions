@@ -27,21 +27,16 @@ Example 4:
   console.log(threeDays()); // prints "Happy New Year!"
 
 ***********************************************************************/
-// what is going on here? Why is it not returning the function as expected??? the console.log is returning as expected.
 let countDownTimer = num => {
-  // let num = n;
   let cD = () => {
-    return countDownTimer(--num)
-  };
-  // console.log(num)
-  // console.log(num === 0)
-  if (num === 0) {
-    return "Happy New Year!"
-  } else {
-    // console.log(cD)
-    console.log(num) // you hit here. Why hit here but not return????
-    return cD;
+    if (num === 0) {
+      return "Happy New Year!"
+    } else {
+      num--;
+      return cD;
+    }
   }
+  return cD();
 
 }
 
@@ -50,10 +45,12 @@ console.log(countDownTimer(0)); // prints "Happy New Year!"
 
 // Example 3:
 let oneDay = countDownTimer(1); // returns a function
+console.log(oneDay)
 console.log(oneDay()); // prints "Happy New Year!"
 
 // Example 3:
 let twoDays = countDownTimer(2); // returns a function
+console.log(twoDays)
 console.log(twoDays()); // returns a function
 console.log(twoDays()); // prints "Happy New Year!"
 
